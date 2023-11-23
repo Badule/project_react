@@ -1,0 +1,340 @@
+
+
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+/*  css cart*/
+.total{
+  display: flex;
+  justify-content: flex-end;
+   font-size: large;
+   box-shadow: 5px 5px 10px rgba(13, 13, 13, 0.5);
+   padding-top: 10px;
+}
+/*  stilizare homePage*/
+.carti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  flex-direction: row;
+ 
+}
+/* stilizare product*/
+
+.cardT{
+   display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  box-shadow: 5px 15px 10px rgba(13, 13, 13, 0.5);
+  border-radius: 20px;
+  height: 400px;
+
+
+
+}
+.title{
+  text-align: center;
+}
+.imagine{
+text-align: center;
+width: 40%;
+}
+/* .Title{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-items: center;
+  flex-direction: row;
+  margin-left: 60px;
+}
+.title{
+  font-size: 25px;
+justify-content: center;
+display: flex;
+
+}
+.card-img1{
+display: flex;
+justify-content: center;
+}
+.card-text{
+  font-size: 12px;
+  
+}
+.card-body{
+
+  
+  text-align: center;
+}
+.price{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  
+
+}
+.pric{
+  
+  background-color: rgb(65, 73, 84);
+  
+  text-align: center;
+  
+}
+.carte{
+  display: inline;
+  justify-content: center;
+ 
+}
+.img{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.desc{
+  display: block;;
+  justify-content: center;
+
+ 
+
+}
+.back{
+ margin-left: 500px;
+} */
+/* 
+// <div>
+    //   <div>
+    //     <NavLink to="/">
+    //     <button className="btn btn-ghost"> Back to Homepage</button>
+    //     </NavLink>
+    //   </div>
+    //   <div className="carte">
+    //       <h2 className="title">{title}</h2>
+    //       <img src={img} alt="poza" className="img" />
+    //       <div className="desc">
+    //       <p>{desc}</p>
+    //       <p>Pret: {price} Lei</p>
+    //       </div>
+    //       </div>
+    // </div> */
+    import React from "react";
+import { useCart } from "react-use-cart";
+
+export function CheckoutForm() {
+  const {
+    totalUniqueItems,
+    items,
+    totalItems,
+    cartTotal,
+    updateItemQuantity,
+    removeItem,
+    emptyCart,
+  } = useCart();
+
+  return (
+    <div className="CheckFrom">
+      <div className="row">
+        <div className="col-md-6">
+          <div>
+            <h2 className="adress">Shipping Address</h2>
+          </div>
+          <br />
+
+          <form>{/* Restul codului pentru formularul de checkout */}</form>
+        </div>
+
+        <div className="col-md-6">
+          <div className="row justify-content-center">
+            <div className="col-12">
+              <h2>
+                Cart ({totalUniqueItems}) Total Items:({totalItems})
+              </h2>
+              <table className="table table-light table-hover m-0 w-full shadow">
+                <tbody>
+                  {items.map((item, index) => {
+                    return (
+                      <tr key={item}>
+                        <td>
+                          <img
+                            className="IMG"
+                            src={item.img}
+                            style={{ height: "50%" }}
+                            alt="poza"
+                          />
+                        </td>
+                        <td> {item.title}</td>
+                        <td> {item.price} Lei</td>
+                        <td>Quantity({item.quantity})</td>
+                        <td>
+                          <button
+                            className="btn btn-outline ms-2"
+                            onClick={() =>
+                              updateItemQuantity(item.id, item.quantity - 1)
+                            }
+                          >
+                            -
+                          </button>
+                          <button
+                            className="btn btn-outline ms-2"
+                            onClick={() =>
+                              updateItemQuantity(item.id, item.quantity + 1)
+                            }
+                          >
+                            +
+                          </button>
+                          <button
+                            className="btn btn-outline btn-accent ms-2"
+                            onClick={() => removeItem(item.id)}
+                          >
+                            Remove Items
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+            <div className="total">
+              <span>Total Price:{cartTotal} Lei </span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+
+
+
+
+
+<form>
+          <label>
+            Nume:
+            <input
+              type="text"
+              name="lastName"
+              // value={userData.lastName}
+              // onChange={handleInputChange}
+            />
+          </label>
+
+          <label>
+            Prenume:
+            <input
+              type="text"
+              name="firstName"
+              // value={userData.firstName}
+              // onChange={handleInputChange}
+            />
+          </label>
+
+          <label>
+            Adresă:
+            <textarea
+              name="address"
+              // value={userData.address}
+              // onChange={handleInputChange}
+            />
+          </label>
+
+          <label>
+            Email:
+            <input
+              type="email"
+              name="email"
+              // value={userData.email}
+              // onChange={handleInputChange}
+            />
+          </label>
+          <br />
+          <label>
+            Metoda de plata:
+            <select
+              name="paymentMethod"
+              // value={userData.paymentMethod}
+              // onChange={handleInputChange}
+            >
+              <option value="card">Card</option>
+              <option value="paypal">PayPal</option>
+              <option value="paypal">Plata la Livrare</option>
+            </select>
+          </label>
+          <br />
+          <button className="btn btn-outline">Finalizeaza comanda</button>
+        </form>
+        import React, { useState, useEffect } from "react";
+import { NavLink } from "react-bootstrap";
+import { useCart } from "react-use-cart";
+
+export function CheckoutForm() {
+  const { emptyCart, totalUniqueItems, items, totalItems, cartTotal } = useCart();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [formCompleted, setFormCompleted] = useState(false);
+  const [orderPlaced, setOrderPlaced] = useState(false); // Starea pentru afișarea mesajului
+
+  useEffect(() => {
+    if (firstName && lastName && email && address) {
+      setFormCompleted(true);
+    } else {
+      setFormCompleted(false);
+    }
+  }, [firstName, lastName, email, address]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formCompleted) {
+      emptyCart();
+      setOrderPlaced(true); // Setează starea pentru afișarea mesajului la true
+      // Poți adăuga alte acțiuni aici pentru a trimite datele către backend, așteptând răspunsul etc.
+    }
+  };
+
+  return (
+    <div>
+      <div>
+        <h2 className="adress">Shipping Address</h2>
+      </div>
+      <div className="CheckFrom">
+        <div className="col-md-6">
+          <form onSubmit={handleSubmit}>
+            {/* Restul codului pentru input-urile formularului */}
+
+            <NavLink to="/" onClick={handleSubmit}>
+              <button
+                className="btn btn-outline"
+                type="submit"
+                disabled={!formCompleted}
+              >
+                Finalizează comanda
+              </button>
+            </NavLink>
+          </form>
+        </div>
+        {/* Restul codului pentru afișarea coșului și a detaliilor acestuia */}
+
+        {orderPlaced && ( // Verifică starea pentru afișarea mesajului
+          <div>
+            <h1>Va mulțumim pentru comandă!</h1>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

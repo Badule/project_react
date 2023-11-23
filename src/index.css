@@ -1,13 +1,242 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+label {
+  display: block;
+  margin-bottom: 5px;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input,
+textarea {
+  width: 200%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
 }
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 50px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/*  css contact*/
+.Icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+}
+.active {
+  color: rgb(236, 155, 239);
+}
+.color {
+  color: aliceblue;
+}
+.us {
+  margin-top: -200px;
+}
+.form {
+  display: flex;
+  justify-content:flex-start;
+}
+.Contact{
+  display:flex;
+  justify-content: space-between;
+}
+.Contact1{
+  display: inline-block;
+  justify-content: center;
+  margin-top: 60px;
+}
+.nu{
+  font-size: 20px;
+  margin-top: 20px;
+ text-decoration: underline;
+}
+.check{
+  max-width: 350px;
+}
+/*  css cart*/
+.total {
+  display: flex;
+  justify-content: flex-end;
+  font-size: large;
+  padding-top: 10px;
+}
+.table{
+   box-shadow: 5px 5px  15px 10px rgba(13, 13, 13, 0.5);
+  display: flex;
+  justify-content: center;
+}
+.IMG{
+  max-width: 40%;
+   box-shadow: 5px 5px  15px 10px rgba(13, 13, 13, 0.5);
+  
+}
+.dvs{
+  text-align: center;
+}
+.back{
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+}
+.checki{
+  display: flex;
+  justify-content:space-between;
+  padding: 10px 10px;
+
+}
+/*  css homePage*/
+.carti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  flex-direction: row;
+}
+.Price{
+  padding: 10px 13px ;
+}
+/* stilizare product*/
+.cardT {
+  box-shadow: 5px 5px  15px 10px rgba(13, 13, 13, 0.5);
+  border-radius: 10px;
+  padding: 10px 17px;
+}
+.componente {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.title {
+  text-align: center;
+  font-size: 25px;
+  align-items: center;
+margin-bottom: 15px;
+}
+/* stilizare imagine product*/
+.imagine {
+  margin: auto;
+  display: block;
+  width: 50%;
+  margin-bottom: 15px;
+}
+.card-text {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.descriere {
+  width: 300px;
+  text-align: justify;
+  text-justify: inter-word;
+  max-height: 50px;
+  overflow: hidden;
+  
+}
+
+/* Stilizare pentru containerul principal */
+.cardTitle {
+  display: flex;
+    box-shadow: 5px 5px  15px 10px rgba(13, 13, 13, 0.5);
+    margin: 15px  80px;
+    
+}
+
+
+/* Stilizare pentru imagine */
+.img  {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: 50px
+}
+
+.cardTitle1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 1px;
+
+  
+
+}
+.title1{
+  max-width: 500px;
+ 
+ 
+}
+.tTitle{
+  font-size: 25px;
+ font-weight: bolder;
+  display: flex;
+  justify-content: space-around;
+  margin:50px;
+ 
+
+}
+.desc{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+.cart{
+  display: flex;
+   justify-content:space-around;
+   margin: 20px;
+}
+.icons {
+  display: inline;
+  margin: 0 10px;
+  
+}
+/* stilizare pagina about*/
+.what{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.hartii{
+  margin-top: 50px;
+  max-width: 700px;
+  padding: 10px 15px;
+   box-shadow: 5px 5px  15px 10px rgba(13, 13, 13, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.imgAbout{
+  border-radius: 30px;
+}
+/* stilizare pagina checkForm*/
+.CheckFrom{
+   display: flex;
+   justify-content: space-between;
+  margin-top: 100px;
+
+
+
+
+}
+.right{
+  max-width: 450px;
+   max-height: 400px;
+}
+.Comanda{
+  display: flex;
+  margin-top: -100px;
+}
+/* .adress{
+  font-size: 20px;
+  display: flex;
+   justify-content: center;
+   padding: 20px 10px;
+
+} */
